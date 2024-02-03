@@ -1,9 +1,11 @@
 var servidor = require('http');
 var archivos = require('fs');
+var obtenerHora = require('./RegistroHora.js');
+
 servidor.createServer(function(req,res){
+     
    res.writeHead(200,{'Content-Type':'text/html'})
-   
-    console.log(req.url);
+    
    switch(req.url){
         case "/":
             archivos.readFile('home.html',function(err,data){
