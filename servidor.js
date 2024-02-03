@@ -3,6 +3,7 @@ var archivos = require('fs');
 servidor.createServer(function(req,res){
    res.writeHead(200,{'Content-Type':'text/html'})
    
+    console.log(req.url);
    switch(req.url){
         case "/":
             archivos.readFile('home.html',function(err,data){
@@ -16,8 +17,8 @@ servidor.createServer(function(req,res){
                 res.end("")
             });
             break;
-        case "/tienda":
-            archivos.readFile('tienda.html',function(err,data){
+        case "/compra":
+            archivos.readFile('compra.html',function(err,data){
                 res.write(data)
                 res.end("")
             });
